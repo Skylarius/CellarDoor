@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="App2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300*"/>
+            <RowDefinition Height="280*"/>
+            <RowDefinition Height="300*"/>
+        </Grid.RowDefinitions>
+
+
+        <CaptureElement Name="cePreview" Stretch="Uniform" Grid.Row="0"/>
+        <Canvas x:Name="cvsFaceOverlay" Grid.Row="0" >
+        </Canvas>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="5">
+            <Button x:Name="btnAuthenticate" Click="btnAuthenticate_Click" >Authenticate</Button>
+            <TextBlock x:Name="labelSubmitPassword" Text="Type Password" Visibility="Collapsed"/>
+            <TextBox x:Name="txtSubmitPassword" Visibility="Collapsed"/>
+            <Button x:Name="btnSubmitPassword" Click="btnSubmitPassword_Click" Visibility="Collapsed">Submit</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="5">
+            <Button x:Name="btnCamera" Click="btnCamera_Click" HorizontalAlignment="Center">Turn on Camera</Button>
+            <Button x:Name="btnClear" Click="btnClear_Click" HorizontalAlignment="Center">Clear</Button>
+            <TextBlock x:Name="txtInfo"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Right" Margin="5">
+            <Button x:Name="btnRegister" Click="btnRegister_Click" HorizontalAlignment="Right">Register</Button>
+            <TextBlock Text="Type Name and Surname" HorizontalAlignment="Right"/>
+            <TextBox x:Name="txtSetNameSurname" Visibility="Visible" />
+            <TextBlock Text="Type Password" HorizontalAlignment="Right"/>
+            <TextBox x:Name="txtSetPassword" Visibility="Visible"/>
+            <Button x:Name="btnOverrideName" Click="btnOverrideName_Click" Visibility="Collapsed" HorizontalAlignment="Right">Override</Button>
+        </StackPanel>
+        <Grid Grid.Row="2" Name="photoContainer">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="100*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Grid>
+</Page>
