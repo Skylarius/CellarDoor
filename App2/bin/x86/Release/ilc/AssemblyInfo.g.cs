@@ -1,15 +1,31 @@
 #define MCG_WINRT_SUPPORTED
 using Mcg.System;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
+using global::Windows.Foundation;
+using global::Windows.Foundation.Collections;
 
 [assembly: global::System.Runtime.InteropServices.McgGeneratedAssembly]
+[assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Private.WinRTInterop.CoreLib")]
 [assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Runtime.WindowsRuntime")]
+[assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Security.Cryptography.X509Certificates")]
 [assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Text.Encoding.CodePages")]
+[assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Security.Cryptography.Encoding")]
+[assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Security.Cryptography.Cng")]
+[assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Security.Cryptography.Csp")]
+[assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Security.Cryptography.Algorithms")]
+[assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Net.NameResolution")]
+[assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Net.Sockets")]
+[assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Security.Principal.Windows")]
+[assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Net.Security")]
+[assembly: global::System.Runtime.CompilerServices.IgnoresAccessChecksTo("System.Net.Primitives")]
+[assembly: global::System.Diagnostics.DebuggerGuidedStepThrough]
+[assembly: global::System.Runtime.CompilerServices.CompilerGenerated]
 
 
 // -----------------------------------------------------------------------------------------------------------

@@ -20,23 +20,24 @@
         </Canvas>
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="5">
-            <Button x:ConnectionId='11' x:Name="btnAuthenticate"                               >Authenticate</Button>
-            <TextBlock x:ConnectionId='12' x:Name="labelSubmitPassword" Text="Type Password" Visibility="Collapsed"/>
-            <TextBox x:ConnectionId='13' x:Name="txtSubmitPassword" Visibility="Collapsed"/>
-            <Button x:ConnectionId='14' x:Name="btnSubmitPassword"                                 Visibility="Collapsed">Submit</Button>
+            <Button x:ConnectionId='13' x:Name="btnAuthenticate"                               >Autentica</Button>
+            <TextBlock x:ConnectionId='14' x:Name="labelSubmitPassword" Text="Password:" Visibility="Collapsed"/>
+            <TextBox x:ConnectionId='15' x:Name="txtSubmitPassword" Visibility="Collapsed"/>
+            <Button x:ConnectionId='16' x:Name="btnSubmitPassword"                                 Visibility="Collapsed">Conferma</Button>
         </StackPanel>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="5">
-            <Button x:ConnectionId='8' x:Name="btnCamera"                         HorizontalAlignment="Center">Turn on Camera</Button>
-            <Button x:ConnectionId='9' x:Name="btnClear"                        HorizontalAlignment="Center">Clear</Button>
-            <TextBlock x:ConnectionId='10' x:Name="txtInfo"/>
+            <MediaElement x:ConnectionId='9' x:Name="mediaElement"  Visibility="Collapsed"/>
+            <Button x:ConnectionId='10' x:Name="btnCamera"                         HorizontalAlignment="Center">Avvia Telecamera</Button>
+            <Button x:ConnectionId='11' x:Name="btnClear"                        HorizontalAlignment="Center">Pulisci</Button>
+            <TextBlock x:ConnectionId='12' x:Name="txtInfo" HorizontalAlignment="Center"/>
         </StackPanel>
         <StackPanel Grid.Row="1" HorizontalAlignment="Right" Margin="5">
-            <Button x:ConnectionId='4' x:Name="btnRegister"                           HorizontalAlignment="Right">Register</Button>
-            <TextBlock Text="Type Name and Surname" HorizontalAlignment="Right"/>
-            <TextBox x:ConnectionId='5' x:Name="txtSetNameSurname" Visibility="Visible" />
-            <TextBlock Text="Type Password" HorizontalAlignment="Right"/>
-            <TextBox x:ConnectionId='6' x:Name="txtSetPassword" Visibility="Visible"/>
-            <Button x:ConnectionId='7' x:Name="btnOverrideName"                               Visibility="Collapsed" HorizontalAlignment="Right">Override</Button>
+            <Button x:ConnectionId='5' x:Name="btnRegister"                           HorizontalAlignment="Right">Registra</Button>
+            <TextBlock Text="Nome e Cognome:" HorizontalAlignment="Right"/>
+            <TextBox x:ConnectionId='6' x:Name="txtSetNameSurname" Visibility="Visible" />
+            <TextBlock Text="Password:" HorizontalAlignment="Right"/>
+            <TextBox x:ConnectionId='7' x:Name="txtSetPassword" Visibility="Visible"/>
+            <Button x:ConnectionId='8' x:Name="btnOverrideName"                               Visibility="Collapsed" HorizontalAlignment="Right">Sostituisci</Button>
         </StackPanel>
         <Grid x:ConnectionId='3' Grid.Row="2" Name="photoContainer">
             <Grid.RowDefinitions>
@@ -58,6 +59,11 @@
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
+            <Rectangle x:ConnectionId='4' x:Name="rectFocus" Height="100" Width="100" Grid.Row="0" Grid.Column="0" Visibility="Collapsed">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Red" Opacity=".8"/>
+                </Rectangle.Fill>
+            </Rectangle>
         </Grid>
     </Grid>
 </Page>

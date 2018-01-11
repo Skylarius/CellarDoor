@@ -21,22 +21,23 @@
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="5">
             <Button x:Name="btnAuthenticate" Click="btnAuthenticate_Click" >Authenticate</Button>
-            <TextBlock x:Name="labelSubmitPassword" Text="Type Password" Visibility="Collapsed"/>
+            <TextBlock x:Name="labelSubmitPassword" Text="Password:" Visibility="Collapsed"/>
             <TextBox x:Name="txtSubmitPassword" Visibility="Collapsed"/>
             <Button x:Name="btnSubmitPassword" Click="btnSubmitPassword_Click" Visibility="Collapsed">Submit</Button>
         </StackPanel>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="5">
-            <Button x:Name="btnCamera" Click="btnCamera_Click" HorizontalAlignment="Center">Turn on Camera</Button>
+            <MediaElement x:Name="mediaElement"  Visibility="Collapsed"/>
+            <Button x:Name="btnCamera" Click="btnCamera_Click" HorizontalAlignment="Center">Go Camera</Button>
             <Button x:Name="btnClear" Click="btnClear_Click" HorizontalAlignment="Center">Clear</Button>
-            <TextBlock x:Name="txtInfo"/>
+            <TextBlock x:Name="txtInfo" HorizontalAlignment="Center"/>
         </StackPanel>
         <StackPanel Grid.Row="1" HorizontalAlignment="Right" Margin="5">
-            <Button x:Name="btnRegister" Click="btnRegister_Click" HorizontalAlignment="Right">Register</Button>
-            <TextBlock Text="Type Name and Surname" HorizontalAlignment="Right"/>
+            <Button x:Name="btnRegister" Click="btnRegister_Click" HorizontalAlignment="Right">Subscrive</Button>
+            <TextBlock Text="Name and Surname:" HorizontalAlignment="Right"/>
             <TextBox x:Name="txtSetNameSurname" Visibility="Visible" />
-            <TextBlock Text="Type Password" HorizontalAlignment="Right"/>
+            <TextBlock Text="Password:" HorizontalAlignment="Right"/>
             <TextBox x:Name="txtSetPassword" Visibility="Visible"/>
-            <Button x:Name="btnOverrideName" Click="btnOverrideName_Click" Visibility="Collapsed" HorizontalAlignment="Right">Override</Button>
+            <Button x:Name="btnOverrideName" Click="btnOverrideName_Click" Visibility="Collapsed" HorizontalAlignment="Right">Replace</Button>
         </StackPanel>
         <Grid Grid.Row="2" Name="photoContainer">
             <Grid.RowDefinitions>
@@ -58,6 +59,11 @@
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
+            <Rectangle x:Name="rectFocus" Height="100" Width="100" Grid.Row="0" Grid.Column="0" Visibility="Collapsed">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Red" Opacity=".8"/>
+                </Rectangle.Fill>
+            </Rectangle>
         </Grid>
     </Grid>
 </Page>

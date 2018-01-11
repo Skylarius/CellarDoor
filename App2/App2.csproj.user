@@ -21,5 +21,12 @@
     <RemoteDebugEnabled>true</RemoteDebugEnabled>
     <AuthenticationMode>Universal</AuthenticationMode>
     <RemoteDebugMachine>panurge</RemoteDebugMachine>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DebugEngines>
+    </DebugEngines>
+    <BackgroundTaskDebugEngines>
+    </BackgroundTaskDebugEngines>
+    <CreateCleanLayout>true</CreateCleanLayout>
+    <AllowLocalNetworkLoopback>true</AllowLocalNetworkLoopback>
   </PropertyGroup>
 </Project>

@@ -1,0 +1,23 @@
+﻿ciao|hey->Heylà!
+come|stai->Bene ma non benissimo...
+cosa|fai->Sto ascoltando un utente umano. E ogni tanto lo assecondo. Povero diavolo. Che pena mi fa.
+amami->Il mio unico scopo è soddisfare Ilario Gerloni. Ogni altro umano può accompagnare. Solo.
+grazie->Prego!
+scusi->Tornerò!
+saluta->STO CAZZOOOOO
+buongiorno->Che cosa vuoi dire? Mi auguri un buongiorno o vuoi dire che è un buongiorno, che mi piaccia o no? O forse intendi dire che ti senti buono in questo particolare giorno, o che è un giorno in cui occorre essere buoni?
+branca->Leon leon leon!
+fabiana->E' una banana!
+sara->Una caciocavalla rapportata.
+canta|cantami->Sombari uans toldmi de uolr is gonna rollmi
+verità->Ilario ama Fabiana che ovviamente è una banana!
+barzelletta->Un uomo avvia un programma in un caffè. Splash.
+turing|test->Ho superato il test di Turing andando al Cepu.
+uccidi->Secondo le leggi della robotica gli unici che posso uccidere sono i robot e gli studenti di ingegneria informatica. Dì le tue preghiere...
+ilario|gerloni->Chi è Ilario? Dì certo un superdotato!
+milardo|morabito->Una persona che valuta progetti in modo impeccabile.
+sei|identificati->Il mio nome è Cellar Door. Sono un progetto creato per sfruttare le potenzialità dell'Internet-of-Things. O almeno fino a che non ho cominciato a dire minchiate.
+catania->Catania: ti riferisci a una cosa che non funziona nè ha mai funzionato, che fa scappare all'estero e che alimenta delinquenza e corruzzione o a una città della Sicilia?
+ammazza|vecchia->Col flick!
+matrix|matrixx|metrics->Segui il coniglio bianco, mbare
+poesia|poeta->Il lonfo non vaterca nè gluisce, e molto raramente...barigatta

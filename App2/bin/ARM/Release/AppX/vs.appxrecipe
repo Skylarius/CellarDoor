@@ -10,7 +10,7 @@
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>33b14da5-f4c7-4e3e-8491-d0963b2ffed5</PackageIdentityName>
     <PackageIdentityPublisher>CN=ilari</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\ilari\source\repos\App2\App2\obj\ARM\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\ilari\source\repos\App2 - English\App2\obj\ARM\Release\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,8 +18,8 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\AppX</LayoutDir>
-    <RegisteredManifestChecksum>3C2B2A678E1F49D8109F52B2CA771F518F43F3D6F160153C5575A75777B7CB65</RegisteredManifestChecksum>
+    <LayoutDir>C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\AppX</LayoutDir>
+    <RegisteredManifestChecksum>E1148200C3FC25535481FFCF07365679765DE7FD81516F5F83A837EED912433C</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>33b14da5-f4c7-4e3e-8491-d0963b2ffed5_1.0.0.0_arm__2rth3nqm32che</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>33b14da5-f4c7-4e3e-8491-d0963b2ffed5_2rth3nqm32che!App</RegisteredUserModeAppID>
     <RegisteredPackageID>33b14da5-f4c7-4e3e-8491-d0963b2ffed5</RegisteredPackageID>
@@ -28,121 +28,129 @@
     <JitOptimizationSuppressed>False</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-12-30T14:04:58.169</Modified>
+      <Modified>2018-01-10T15:41:44.155</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\App2.dll">
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\AdditionalCommands.txt">
+      <PackagePath>AdditionalCommands.txt</PackagePath>
+      <Modified>2018-01-08T23:01:45.372</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\App2.dll">
       <PackagePath>App2.dll</PackagePath>
-      <Modified>2017-12-30T14:04:58.056</Modified>
+      <Modified>2018-01-10T15:41:43.487</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\App2.exe">
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\App2.exe">
       <PackagePath>App2.exe</PackagePath>
-      <Modified>2017-12-30T14:04:58.155</Modified>
+      <Modified>2018-01-10T15:41:44.141</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\App2.pdb">
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\App2.pdb">
       <PackagePath>App2.pdb</PackagePath>
-      <Modified>2017-12-30T14:04:58.154</Modified>
+      <Modified>2018-01-10T15:41:44.140</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2017-12-28T10:29:52.281</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-28T10:29:52.281</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-28T10:29:52.281</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-28T10:29:52.281</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-28T10:29:52.281</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-28T10:29:52.281</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-28T10:29:52.281</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\clrcompression.dll">
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
-      <Modified>2016-06-13T19:43:02.000</Modified>
+      <Modified>2017-11-20T15:16:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2\App2\bin\ARM\Release\ilc\resources.pri">
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\GrammarStructure.xml">
+      <PackagePath>GrammarStructure.xml</PackagePath>
+      <Modified>2018-01-04T00:36:16.059</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ilari\source\repos\App2 - English\App2\bin\ARM\Release\ilc\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-12-30T14:04:42.354</Modified>
+      <Modified>2018-01-10T15:41:02.989</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-x86\1.7.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.1.7.appx">
-      <Name>Microsoft.NET.Native.Framework.1.7</Name>
-      <Version>1.7.25531.0</Version>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-x86\2.0.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.0.appx">
+      <Name>Microsoft.NET.Native.Framework.2.0</Name>
+      <Version>2.0.25709.0</Version>
       <Architecture>x86</Architecture>
-      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.1.7, MinVersion = 1.7.25531.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-x86\1.7.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.1.7.appx</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.2.0, MinVersion = 2.0.25709.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-x86\2.0.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.0.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-x64\1.7.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.1.7.appx">
-      <Name>Microsoft.NET.Native.Framework.1.7</Name>
-      <Version>1.7.25531.0</Version>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-x64\2.0.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.0.appx">
+      <Name>Microsoft.NET.Native.Framework.2.0</Name>
+      <Version>2.0.25709.0</Version>
       <Architecture>x64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.1.7, MinVersion = 1.7.25531.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-x64\1.7.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.1.7.appx</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.2.0, MinVersion = 2.0.25709.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-x64\2.0.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.0.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-arm\1.7.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.1.7.appx">
-      <Name>Microsoft.NET.Native.Framework.1.7</Name>
-      <Version>1.7.25531.0</Version>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-arm\2.0.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.0.appx">
+      <Name>Microsoft.NET.Native.Framework.2.0</Name>
+      <Version>2.0.25709.0</Version>
       <Architecture>arm</Architecture>
-      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.1.7, MinVersion = 1.7.25531.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-arm\1.7.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.1.7.appx</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.2.0, MinVersion = 2.0.25709.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-arm\2.0.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.0.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\1.7.2\build\..\tools\Runtime\x86\Microsoft.NET.Native.Runtime.1.7.appx">
-      <Name>Microsoft.NET.Native.Runtime.1.7</Name>
-      <Version>1.7.25531.0</Version>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\2.0.2\build\..\tools\Runtime\x86\Microsoft.NET.Native.Runtime.2.0.appx">
+      <Name>Microsoft.NET.Native.Runtime.2.0</Name>
+      <Version>2.0.25709.0</Version>
       <Architecture>x86</Architecture>
-      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.7, MinVersion = 1.7.25531.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\1.7.2\build\..\tools\Runtime\x86\Microsoft.NET.Native.Runtime.1.7.appx</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.2.0, MinVersion = 2.0.25709.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\2.0.2\build\..\tools\Runtime\x86\Microsoft.NET.Native.Runtime.2.0.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\1.7.2\build\..\tools\Runtime\x64\Microsoft.NET.Native.Runtime.1.7.appx">
-      <Name>Microsoft.NET.Native.Runtime.1.7</Name>
-      <Version>1.7.25531.0</Version>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\2.0.2\build\..\tools\Runtime\x64\Microsoft.NET.Native.Runtime.2.0.appx">
+      <Name>Microsoft.NET.Native.Runtime.2.0</Name>
+      <Version>2.0.25709.0</Version>
       <Architecture>x64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.7, MinVersion = 1.7.25531.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\1.7.2\build\..\tools\Runtime\x64\Microsoft.NET.Native.Runtime.1.7.appx</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.2.0, MinVersion = 2.0.25709.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\2.0.2\build\..\tools\Runtime\x64\Microsoft.NET.Native.Runtime.2.0.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\1.7.2\build\..\tools\Runtime\arm\Microsoft.NET.Native.Runtime.1.7.appx">
-      <Name>Microsoft.NET.Native.Runtime.1.7</Name>
-      <Version>1.7.25531.0</Version>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\2.0.2\build\..\tools\Runtime\arm\Microsoft.NET.Native.Runtime.2.0.appx">
+      <Name>Microsoft.NET.Native.Runtime.2.0</Name>
+      <Version>2.0.25709.0</Version>
       <Architecture>arm</Architecture>
-      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.7, MinVersion = 1.7.25531.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\1.7.2\build\..\tools\Runtime\arm\Microsoft.NET.Native.Runtime.1.7.appx</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.2.0, MinVersion = 2.0.25709.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\2.0.2\build\..\tools\Runtime\arm\Microsoft.NET.Native.Runtime.2.0.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>

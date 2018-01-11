@@ -1,0 +1,12 @@
+/ref:"C:\Users\ilari\source\repos\App2 - Copia\App2\obj\x86\Release\ilc\intermediate\PreMergeILTransformed"
+/ref:"C:\Program Files (x86)\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.sharedlibrary-x86\2.0.0\tools\SharedLibrary\ret\AnalysisILToc"
+/ref:"C:\Users\ilari\source\repos\App2 - Copia\App2\obj\x86\Release\ilc\intermediate\PreMergeILTransformed"
+/ref:"C:\Users\ilari\source\repos\App2 - Copia\App2\obj\x86\Release\ilc\in\\"
+/ref:"C:\Program Files (x86)\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\2.0.2\tools\x86\ilc\lib\Private\\"
+/ref:"C:\Users\ilari\source\repos\App2 - Copia\App2\obj\x86\Release\ilc\in"
+/ref:"C:\Users\ilari\source\repos\App2 - Copia\App2\obj\x86\Release\ilc\in\WinMetadata"
+/ca:System.Private.CoreLib
+/cscpath:"C:\Program Files (x86)\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\2.0.2\tools\csc"
+/out:"C:\Users\ilari\source\repos\App2 - Copia\App2\obj\x86\Release\ilc\intermediate\SgGenerated\\"
+/int:"C:\Users\ilari\source\repos\App2 - Copia\App2\obj\x86\Release\ilc\intermediate\App2.Sg"
+"@C:\Users\ilari\source\repos\App2 - Copia\App2\obj\x86\Release\ilc\intermediate\App2.Sg\ComputedSerializationInput.txt"

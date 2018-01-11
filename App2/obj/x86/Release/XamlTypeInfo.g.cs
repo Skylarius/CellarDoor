@@ -8,23 +8,29 @@
 //------------------------------------------------------------------------------
 
 
-
 namespace App2
 {
     public partial class App : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
-    private global::App2.App2_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        private global::App2.App2_XamlTypeInfo.XamlMetaDataProvider __appProvider;
+        private global::App2.App2_XamlTypeInfo.XamlMetaDataProvider _AppProvider
+        {
+            get
+            {
+                if (__appProvider == null)
+                {
+                    __appProvider = new global::App2.App2_XamlTypeInfo.XamlMetaDataProvider();
+                }
+                return __appProvider;
+            }
+        }
 
         /// <summary>
         /// GetXamlType(Type)
         /// </summary>
         public global::Windows.UI.Xaml.Markup.IXamlType GetXamlType(global::System.Type type)
         {
-            if(_provider == null)
-            {
-                _provider = new global::App2.App2_XamlTypeInfo.XamlTypeInfoProvider();
-            }
-            return _provider.GetXamlTypeByType(type);
+            return _AppProvider.GetXamlType(type);
         }
 
         /// <summary>
@@ -32,11 +38,56 @@ namespace App2
         /// </summary>
         public global::Windows.UI.Xaml.Markup.IXamlType GetXamlType(string fullName)
         {
-            if(_provider == null)
+            return _AppProvider.GetXamlType(fullName);
+        }
+
+        /// <summary>
+        /// GetXmlnsDefinitions()
+        /// </summary>
+        public global::Windows.UI.Xaml.Markup.XmlnsDefinition[] GetXmlnsDefinitions()
+        {
+            return _AppProvider.GetXmlnsDefinitions();
+        }
+    }
+}
+
+namespace App2.App2_XamlTypeInfo
+{
+    /// <summary>
+    /// Main class for providing metadata for the app or library
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.16.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public sealed class XamlMetaDataProvider : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
+    {
+        private global::App2.App2_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
+
+        private global::App2.App2_XamlTypeInfo.XamlTypeInfoProvider Provider
+        {
+            get
             {
-                _provider = new global::App2.App2_XamlTypeInfo.XamlTypeInfoProvider();
+                if (_provider == null)
+                {
+                    _provider = new global::App2.App2_XamlTypeInfo.XamlTypeInfoProvider();
+                }
+                return _provider;
             }
-            return _provider.GetXamlTypeByName(fullName);
+        }
+
+        /// <summary>
+        /// GetXamlType(Type)
+        /// </summary>
+        public global::Windows.UI.Xaml.Markup.IXamlType GetXamlType(global::System.Type type)
+        {
+            return Provider.GetXamlTypeByType(type);
+        }
+
+        /// <summary>
+        /// GetXamlType(String)
+        /// </summary>
+        public global::Windows.UI.Xaml.Markup.IXamlType GetXamlType(string fullName)
+        {
+            return Provider.GetXamlTypeByName(fullName);
         }
 
         /// <summary>
@@ -47,11 +98,8 @@ namespace App2
             return new global::Windows.UI.Xaml.Markup.XmlnsDefinition[0];
         }
     }
-}
 
-namespace App2.App2_XamlTypeInfo
-{
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.16.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal partial class XamlTypeInfoProvider
     {
@@ -215,7 +263,7 @@ namespace App2.App2_XamlTypeInfo
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.16.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlSystemBaseType : global::Windows.UI.Xaml.Markup.IXamlType
     {
@@ -261,8 +309,9 @@ namespace App2.App2_XamlTypeInfo
     internal delegate object Activator();
     internal delegate void AddToCollection(object instance, object item);
     internal delegate void AddToDictionary(object instance, object key, object item);
+    internal delegate object CreateFromStringMethod(string args);
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.16.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlUserType : global::App2.App2_XamlTypeInfo.XamlSystemBaseType
     {
@@ -345,12 +394,16 @@ namespace App2.App2_XamlTypeInfo
 
         override public void RunInitializer() 
         {
-            System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(UnderlyingType.TypeHandle);
+            global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(UnderlyingType.TypeHandle);
         }
 
         override public object CreateFromString(string input)
         {
-            if (_enumValues != null)
+            if (CreateFromStringMethod != null)
+            {
+                return this.CreateFromStringMethod(input);
+            }
+            else if (_enumValues != null)
             {
                 int value = 0;
 
@@ -405,6 +458,7 @@ namespace App2.App2_XamlTypeInfo
         public Activator Activator { get; set; }
         public AddToCollection CollectionAdd { get; set; }
         public AddToDictionary DictionaryAdd { get; set; }
+        public CreateFromStringMethod CreateFromStringMethod {get; set; }
 
         public void SetContentPropertyName(string contentPropertyName)
         {
@@ -468,7 +522,7 @@ namespace App2.App2_XamlTypeInfo
     internal delegate object Getter(object instance);
     internal delegate void Setter(object instance, object value);
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.16.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlMember : global::Windows.UI.Xaml.Markup.IXamlMember
     {
