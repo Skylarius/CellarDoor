@@ -1,8 +1,0 @@
-"C:\Users\ilari\source\repos\App2 - English\App2\obj\ARM\Release\ilc\in\App2.exe"
-/Lib:"C:\Users\ilari\source\repos\App2 - English\App2\obj\ARM\Release\ilc\in"
-/Lib:"C:\Program Files (x86)\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\2.0.2\tools\ARM\ilc\lib\Private"
-/WinMD:"C:\Users\ilari\source\repos\App2 - English\App2\obj\ARM\Release\ilc\in\WinMetadata\Windows.System.SystemManagementContract.winmd"
-/WinMD:"C:\Users\ilari\source\repos\App2 - English\App2\obj\ARM\Release\ilc\in\WinMetadata\Windows.winmd"
-/VSTelemetrySessionSettings:"{"AppId":1001,"AppInsightsInstrumentationKey":"f144292e-e3b2-4011-ac90-20e5c03fbce5","AsimovInstrumentationKey":"AIF-312cbd79-9dbb-4c48-a7da-3cc2a931cb70","HostName":"Dev14","Id":"b9fe74aa-9883-4afb-88ab-a50809528356","IsOptedIn":true,"ProcessStartTime":636511951916528893,"UserId":"d9f264bc-35b6-4ad4-be7b-c50aa01acb96"}"
-/RdXmlPath:"C:\Program Files (x86)\Microsoft SDKs\NuGetPackagesFallback\microsoft.net.native.compiler\2.0.2\tools\LibraryXML"
-/RunOnlyPreDR
