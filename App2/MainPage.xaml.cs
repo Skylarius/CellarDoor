@@ -18,28 +18,23 @@ using Windows.Media.SpeechRecognition;
 using Windows.Media.SpeechSynthesis;
 using Windows.Devices.Gpio;
 
-// Il modello di elemento Pagina vuota è documentato all'indirizzo https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x410
-
 namespace App2
 {
-    /// <summary>
-    /// Pagina vuota che può essere usata autonomamente oppure per l'esplorazione all'interno di un frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
-        private const String SUBSCRIPTION_FACE_DETECTION_CODE = "6b8f79b3b76d4efeb7c490dcd3f4f573";
-        private static MediaCapture _mediaCapture;
-        private bool isDetecting = false, isCapturing = false;
-        int photoContainerIndexRow = 0, photoContainerIndexCol = 0;
+        private const String SUBSCRIPTION_FACE_DETECTION_CODE = ""; //The subscription code recived from Azure at subscription to face APIs moment
+        private static MediaCapture _mediaCapture; //camera capturing handler obj
+        private bool isDetecting = false, isCapturing = false; 
+        int photoContainerIndexRow = 0, photoContainerIndexCol = 0; //index of row and column of actual free places in Grid of Users' Photos
         List<User> Users;
-        User loggingUser, loggedUser;
-        SpeechRecognizer sr;
-        string[] affermation = {"right", "yes", "ok", "perfect", "confirm"};
-        SpeechSynthesizer ss;
-        List<Tuple<string[], string>> additionalCommands;
+        User loggingUser, loggedUser; //loggingUser: user which is authenticate by face but not by password; loggedUser: user which is wholly authenticate, and can be served (can be allowed to open door) 
+        string[] affermation = {"right", "yes", "ok", "perfect", "confirm"}; //some affermation words, actually used in Register() only.
+        List<Tuple<string[], string>> additionalCommands; //some additional command to Register, Subscribe, Clear, Go Camera and affermation. Actually used just for fun
         GpioPin pin=null;
         private const int LED_PIN = 5;
-        private Func<Task> Service;
+        SpeechRecognizer sr; //speech recognizer handler obj
+        SpeechSynthesizer ss; //speech synthetizer handler obj
+        private Func<Task> Service; //procedure taken when user authenticated. Actually could be only one of ServicePinTurn and ServiceNull.
 
         public MainPage()
         {
@@ -47,7 +42,7 @@ namespace App2
             loggingUser = null;
             loggedUser = null;
             Users = new List<User>();
-            Service = ServicePinNull;
+            Service = ServicePinNull; //default procedure
             InitializeSpeechSynthesizer();
             InitializeSpeechRecognizer();
             InitializeGPIO();
@@ -55,6 +50,9 @@ namespace App2
         }
 
         //GENERAL PURPOSE FUNCTION
+        ///<summary>
+        ///     Takes photo, saves photo file on temp folder, sets a place of grid as new photo and then returns user with attribute PhotoFace.
+        ///</summary>
         private async Task<User> TakePhoto(String filename)
         {
             var photoFile = await ApplicationData.Current.TemporaryFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
@@ -76,6 +74,9 @@ namespace App2
             await Print("Picture taken!");
             return u;
         }
+        ///<summary>
+        ///    Reads a file content and returns this serialized as bytes array.
+        ///</summary>
         public async Task<byte[]> ReadFile(StorageFile file)
         {
             byte[] fileBytes = null;
@@ -91,6 +92,9 @@ namespace App2
 
             return fileBytes;
         }
+        ///<summary>
+        ///    Sets photo as body of HTTP request to APIs of Azure. Then waits for response and decapsulates corresponding faceId, which identificates the singular photo.
+        ///</summary>
         async Task<String> MakeRequestFaceDetect(StorageFile photoFile)
         {
             var client = new HttpClient();
@@ -124,6 +128,10 @@ namespace App2
             return faceId;
 
         }
+        ///<summary>
+        ///    Sets logging user's faceId and list of users faceIds as content of HTTP request to APIs of Azure. Then waits for response and decapsulate a faceId, which
+        ///    corresponds to the similar faceId in faceIds list to the logging user's faceId
+        ///</summary>
         async Task<List<String>> MakeRequestFindSimilar(String faceIdTarget, List<String> faceIds)
         {            
             var client = new HttpClient();
@@ -166,6 +174,9 @@ namespace App2
             return faceIdsFound;
 
         }
+        ///<summary>
+        ///    Prints on screen and then speeches text
+        ///</summary>
         public async Task Print(String x)
         {
             txtInfo.Text += x + "\n";
@@ -173,6 +184,9 @@ namespace App2
             await Task.Delay(x.Length*80);
             txtInfo.Text += "☺";
         }
+        ///<summary>
+        ///    Speeches text.
+        ///</summary>
         private async Task Talk(string message)
         {
             var stream = await ss.SynthesizeTextToStreamAsync(message);
@@ -180,9 +194,15 @@ namespace App2
             //mediaElement.Play();
 
         }
+        ///<summary>
+        ///    Clears screen previous messages.
+        ///</summary>
         public void Clear() {
             txtInfo.Text = "";
         }
+        ///<summary>
+        ///    Resets all text fields and optional buttons
+        ///</summary>
         public void ResetAll()
         {
             labelSubmitPassword.Visibility =
@@ -194,6 +214,9 @@ namespace App2
             txtSetNameSurname.Text =
             txtSubmitPassword.Text = "";
         }
+        ///<summary>
+        ///    Saves userslist on file and moves photoFace files from temp to local folder
+        ///</summary>
         private static async void Save(string FileName, List<User> _Data)
         {
             MemoryStream _MemoryStream = new MemoryStream();
@@ -219,7 +242,9 @@ namespace App2
             await tempPhotoFile.MoveAndReplaceAsync(photoFile);
             
         }
-
+        ///<summary>
+        ///    Saves userlist on file.
+        ///</summary>
         private static async Task SaveUsersListOnly(string FileName, List<User> _Data)
         {
             MemoryStream _MemoryStream = new MemoryStream();
@@ -238,7 +263,9 @@ namespace App2
                 fileStream.Dispose();
             }
         }
-
+        ///<summary>
+        ///    Load users from file into Users list
+        ///</summary>
         private async Task<List<User>> Load(string FileName)
         {
             StorageFolder _Folder = ApplicationData.Current.LocalFolder;
@@ -269,7 +296,9 @@ namespace App2
         }
 
         //INITIALIZERS
-
+        ///<summary>
+        ///    Loads users from file MyUsers.dat and then check if their registration is older than one day. If no load photos into grid, else remove users from users list.
+        ///</summary>
         private async void InitializeUsers()
         {
             try
@@ -339,6 +368,9 @@ namespace App2
             ss = new SpeechSynthesizer();
             mediaElement.AutoPlay = true;
         }
+        ///<summary>
+        ///    Some fun additional commands are in a txt file. Check for AttitionalCommands.txt on project folder to understand grammar.
+        ///</summary>
         private async Task InitializeAdditionalCommands(string filePath)
         {
             //ms - appx:///
@@ -352,7 +384,9 @@ namespace App2
                 additionalCommands.Add(tuple);
             }
         }
-
+        ///<summary>
+        ///    If GPIO is attached, service becomes ServicePinTurn (see below)
+        ///</summary>
         private async void InitializeGPIO()
         {
             var gpio = GpioController.GetDefault();
@@ -373,10 +407,16 @@ namespace App2
             Service = ServicePinTurn;
         }
 
-
-            //BUTTONS & PROCEDURES
-
+        //BUTTONS & PROCEDURES
+        
         private async void btnCamera_Click(object sender, RoutedEventArgs e)
+        {
+            Camera();    
+        }
+        ///<summary>
+        ///    Activates capturing
+        ///</summary>
+        private async Task Camera()
         {
             if (isCapturing) return;
             isCapturing = true;
@@ -397,7 +437,7 @@ namespace App2
 
         ///<summary>
         ///    Registers User. Get name, surname and password, checks for collision, save on application folder new list of users and
-        ///    show photo on grid below. Registered photo is also sent to face detection server by api, which returns a faceId used for recognition
+        ///    show photo on grid below. Registered photo is also sent to face detection server by api, which returns a faceId used for recognition.
         ///</summary>
         private async Task Register()
         {
@@ -452,7 +492,9 @@ namespace App2
         {
             await OverrideName();
         }
-
+        ///<summary>
+        ///     Removes the users which name is in NameSurname text field, then Register new user.
+        ///</summary>
         private async Task OverrideName()
         {
             try
@@ -534,6 +576,9 @@ namespace App2
         private async void btnSubmitPassword_Click(object sender, RoutedEventArgs e) {
             await SubmitPassword();
         }
+        ///<summary>
+        ///    Submits password then, if matching, starts Service()
+        ///</summary>
 
         private async Task SubmitPassword()
         {
@@ -561,7 +606,9 @@ namespace App2
         }
 
         //SPEECH RECOGNITION
-
+        ///<summary>
+        ///    Main of Speech recognition.
+        ///</summary>
         private async void srController()
         {
             await Print("Say the words on buttons to command!");
@@ -581,10 +628,8 @@ namespace App2
                     {
                         switch(command)
                         {
-                            case "autentica":
                             case "authenticate":
                             case "recognize":
-                            case "autenticami":
                                 await Authenticate();
                                 do
                                 {
@@ -594,12 +639,8 @@ namespace App2
                                 await SubmitPassword();
                                 done = true;
                                 break;
-                            case "iscrivi":
-                            case "iscrivimi":
                             case "subscribe":
                             case "register":
-                            case "registrami":
-                            case "registra":
                                 await Print("Say your first name please:");
                                 do
                                 {
@@ -629,22 +670,16 @@ namespace App2
                                 else await Print("Subscribtion has been canceled!");
                                 done = true;
                                 break;
-                            case "sovrascrivi":
                             case "replace":
                             case "overwrite":
-                            case "sostituisci":
-                            case "sostituire":
                                 await OverrideName();
                                 done = true;
                                 break;
                             case "go":
-                            case "avvia":
-                            case "telecamera":
                             case "camera":
                                 btnCamera_Click(null, null);
                                 done = true;
                                 break;
-                            case "pulisci":
                             case "clear":
                                 Clear();
                                 done = true;
@@ -674,7 +709,9 @@ namespace App2
 
 
         //SERVICES
-
+        ///<summary>
+        ///    Turns LED on, waits 10 seconds, then turns it off.
+        ///</summary>
         private async Task ServicePinTurn() {
             pin.Write(GpioPinValue.Low);
             await Task.Delay(10000);
